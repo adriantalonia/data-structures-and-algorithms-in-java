@@ -12,7 +12,7 @@ This repository serves as a comprehensive guide and learning resource for implem
 
 - Java 21
 
-## Data Structures Covered
+## [Data Structures Covered](src/data_structures/_02_non_primitive/README.md) 🔗
 
 This repository includes a range of fundamental and advanced data structures:
 
