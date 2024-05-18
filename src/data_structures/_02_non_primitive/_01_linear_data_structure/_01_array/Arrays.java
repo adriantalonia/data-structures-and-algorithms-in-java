@@ -1,4 +1,4 @@
-package data_structures._02_non_primitive._01_array;
+package data_structures._02_non_primitive._01_linear_data_structure._01_array;
 
 import java.util.ArrayList;
 

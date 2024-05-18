@@ -1,4 +1,21 @@
-# Array
+# Arrays
+
+<!-- TOC -->
+* [Arrays](#arrays)
+  * [Basic terminologies of Array:](#basic-terminologies-of-array)
+  * [Characteristics of Array Data Structure:](#characteristics-of-array-data-structure)
+  * [Types of arrays:](#types-of-arrays)
+  * [Types of Array operations:](#types-of-array-operations)
+  * [Declaration of Array:](#declaration-of-array)
+  * [More about Types of Arrays:](#more-about-types-of-arrays)
+  * [Operations on Arrays](#operations-on-arrays)
+  * [Complexity Analysis of Operations on Array:](#complexity-analysis-of-operations-on-array)
+  * [Advantages of Array:](#advantages-of-array)
+  * [Disadvantages of Array:](#disadvantages-of-array)
+  * [Applications of Array:](#applications-of-array)
+  * [Frequently Asked Questions (FAQs) on Arrays:](#frequently-asked-questions-faqs-on-arrays)
+  * [Conclusion](#conclusion)
+<!-- TOC -->
 
 **Array** is a linear data structure that stores a collection of elements of the same data type. Elements are allocated contiguous memory, allowing for constant-time access. Each element has a unique index number.
 
@@ -11,13 +28,13 @@
 
 ![img](/src/resources/img/array_img.png)
 
-### Characteristics of Array Data Structure:
+## Characteristics of Array Data Structure:
 - **Homogeneous Elements:** All elements within an array must be of the same data type.
 - **Contiguous Memory Allocation:** In most programming languages, elements in an array are stored in contiguous (adjacent) memory locations.
 - **Zero-Based Indexing:** In many programming languages, arrays use zero-based indexing, which means that the first element is accessed with an index of 0, the second with an index of 1, and so on.
 - **Random Access:** Arrays provide **constant-time (O(1))** access to elements. This means that regardless of the size of the array, it takes the same amount of time to access any element based on its index.
 
-### Types of arrays:
+## Types of arrays:
 
 1) **One-Dimensional Array**: This is the simplest form of an array, which consists of a single row of elements, all of the same data type. Elements in a 1D array are accessed using a single index.
 
@@ -31,13 +48,13 @@
 
 ![img](/src/resources/img/3D-array.jpg)
 
-### Types of Array operations:
+## Types of Array operations:
 - **Accessing Elements**: Accessing a specific element in an array by its index is a constant-time operation. It has a time complexity of **O(1)**.
 - **Insertion**: Appending an element to the end of an array is usually a constant-time operation, **O(1)** but insertion at the beginning or any specific index takes **O(n)** time because it requires shifting all of the elements.
 - **Deletion**: Same as insertion, deleting the last element is a constant-time operation, **O(1)** but deletion of element at the beginning or any specific index takes **O(n)** time because it requires shifting all of the elements.
 - **Searching**: Linear Search takes **O(n)** time which is useful for unsorted data and Binary Search takes **O(logn)** time which is useful for sorted data.
 
-### Declaration of Array:
+## Declaration of Array:
 
 ```java
 // Syntax to Declare an Array in Java
@@ -63,7 +80,7 @@ int[] arrInt = { 1, 2, 3, 4, 5 }; //declaration, instantiation and initializatio
 char[] arrChar = { 'a', 'b', 'c', 'd', 'e' };
 float[] arrFloat = { 1.4f, 2.0f, 24f, 5.0f, 0.0f };
 ```
-### Types of Arrays:
+## More about Types of Arrays:
 Arrays can be classified in two ways:
 
 1) On the basis of Memory Allocation
@@ -245,6 +262,6 @@ int findElement(int arr[], int n, int key)
 
     A multi-dimensional array can be termed as an array of arrays that stores homogeneous data in tabular form. Data in Multidimensional Arrays are stored in row-major order.
 
-### Conclusion
+## Conclusion
 
 After the discussion, we concluded that arrays are a simple method of accessing elements of the same type by grouping them and we can find the elements efficiently by their indexes and can perform different operations using them. Thus, they are more efficient when it comes to memory allocation and should be used in all modern programming languages. So, this becomes a favorite topic for the perspective of the interview and most of the companies generally asked about the problems on the array. For all these reasons, we must have a good knowledge of it.

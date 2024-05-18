@@ -33,8 +33,8 @@ Data structures can be classified into two main categories:
    - hash tables
 
 ## Linear Data Structures:
-- **[Array](_01_array/README.md)🔗:**  A collection of elements of the same type stored in contiguous memory locations.
-- **Linked List:** A collection of elements linked together by pointers, allowing for dynamic insertion and deletion.
+- **[Array](_01_linear_data_structure/_01_array/README.md)🔗:**  A collection of elements of the same type stored in contiguous memory locations.
+- **[Linked List](_01_linear_data_structure/_02_linked_list/README.md)🔗:** A collection of elements linked together by pointers, allowing for dynamic insertion and deletion.
 - **Queue:** A First-In-First-Out (FIFO) structure where elements are added at the end and removed from the beginning.
 - **Stack:** A Last-In-First-Out (LIFO) structure where elements are added and removed from the top.
 
