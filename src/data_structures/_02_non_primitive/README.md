@@ -1,5 +1,15 @@
 # Non-Primitive Data Structure
 
+<!-- TOC -->
+* [Non-Primitive Data Structure](#non-primitive-data-structure)
+  * [What is a Data Structure?](#what-is-a-data-structure)
+  * [Why are Data Structures Important?](#why-are-data-structures-important)
+  * [Classification of Data Structures](#classification-of-data-structures)
+  * [Linear Data Structures:](#linear-data-structures)
+  * [Non-Linear Data Structures:](#non-linear-data-structures)
+  * [Overview of Data Structures](#overview-of-data-structures)
+<!-- TOC -->
+
 ![img.png](../../resources/img/ds-diagram.png)
 
 Data structures are essential components that help organize and store data efficiently in computer memory. They provide a way to manage and manipulate data effectively, enabling faster access, insertion, and deletion operations.
@@ -13,11 +23,11 @@ A data structure is a way of organizing and storing data in a computer so that i
 ## Why are Data Structures Important?
 Data structures are essential for the following reasons:
 
-Efficient Data Management: They enable efficient storage and retrieval of data, reducing processing time and improving performance.
-Data Organization: They organize data in a logical manner, making it easier to understand and access.
-Data Abstraction: They hide the implementation details of data storage, allowing programmers to focus on the logical aspects of data manipulation.
-Reusability: Common data structures can be reused in multiple applications, saving time and effort in development.
-Algorithm Optimization: The choice of the appropriate data structure can significantly impact the efficiency of algorithms that operate on the data.
+- **Efficient Data Management:** They enable efficient storage and retrieval of data, reducing processing time and improving performance.
+- **Data Organization:** They organize data in a logical manner, making it easier to understand and access.
+- **Data Abstraction:** They hide the implementation details of data storage, allowing programmers to focus on the logical aspects of data manipulation.
+- **Reusability:** Common data structures can be reused in multiple applications, saving time and effort in development.
+- **Algorithm Optimization:** The choice of the appropriate data structure can significantly impact the efficiency of algorithms that operate on the data.
 
 ## Classification of Data Structures
 Data structures can be classified into two main categories:
@@ -33,8 +43,8 @@ Data structures can be classified into two main categories:
    - hash tables
 
 ## Linear Data Structures:
-- **[Array](_01_linear_data_structure/_01_array/README.md)🔗:**  A collection of elements of the same type stored in contiguous memory locations.
-- **[Linked List](_01_linear_data_structure/_02_linked_list/README.md)🔗:** A collection of elements linked together by pointers, allowing for dynamic insertion and deletion.
+- **[Array](_01_linear_data_structure/_01_array/README.md) 🔗:**  A collection of elements of the same type stored in contiguous memory locations.
+- **[Linked List](_01_linear_data_structure/_02_linked_list/README.md) 🔗:** A collection of elements linked together by pointers, allowing for dynamic insertion and deletion.
 - **Queue:** A First-In-First-Out (FIFO) structure where elements are added at the end and removed from the beginning.
 - **Stack:** A Last-In-First-Out (LIFO) structure where elements are added and removed from the top.
 
