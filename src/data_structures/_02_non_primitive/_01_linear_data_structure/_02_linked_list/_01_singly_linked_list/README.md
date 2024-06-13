@@ -45,3 +45,16 @@ Node next;
 - **Database indexing:** Singly linked lists can be used to implement linked lists in databases, allowing for fast insertion and deletion operations.
 - **Representing polynomials and sparse matrices:** Singly linked lists can be used to efficiently represent polynomials and sparse matrices, where most elements are zero.
 - **Operating systems:** Singly linked lists are used in operating systems for tasks such as scheduling processes and managing system resources.
+
+## Operations on Singly Linked List:
+- Traversal
+- Searching
+- Length
+- Insertion:
+  - Insert at the beginning
+  - Insert at the end
+  - Insert at a specific position
+- Deletion:
+  - Delete from the beginning
+  - Delete from the end
+  - Delete a specific node
