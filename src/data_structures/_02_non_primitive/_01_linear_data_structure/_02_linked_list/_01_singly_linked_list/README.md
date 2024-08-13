@@ -6,6 +6,8 @@
   * [Structure of a Singly Linked List](#structure-of-a-singly-linked-list)
   * [Characteristics of a Singly Linked List:](#characteristics-of-a-singly-linked-list)
   * [Application of Singly Linked Lists:](#application-of-singly-linked-lists)
+  * [Operations on Singly Linked List:](#operations-on-singly-linked-list)
+    * [Inserting At the Beginning of the list](#inserting-at-the-beginning-of-the-list)
 <!-- TOC -->
 
 ## Singly Linked List definition & meaning DSA
@@ -58,3 +60,87 @@ Node next;
   - Delete from the beginning
   - Delete from the end
   - Delete a specific node
+
+### Inserting At the Beginning of the list
+
+To insert a new node at the front, we create a new node and point its next reference to the current head of the linked list. Then, we update the head to be this new node. This operation is efficient because it only requires adjusting a few pointers.
+
+**Algorithm**:
+
+- Make the first node of Linked List linked to the new node
+- Remove the head from the original first node of Linked List
+- Make the new node as the Head of the Linked List.
+
+```java
+// Java Program to insert the node at the beginning of
+// Linked List
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int new_data)
+    {
+        data = new_data;
+        next = null;
+    }
+}
+
+public class GFG {
+    // Function to insert a new node at the beginning of the
+    // list
+    public static Node insertAtFront(Node head,
+                                     int new_data)
+    {
+        // Create a new node with the given data
+        Node new_node = new Node(new_data);
+
+        // Make the next of the new node point to the
+        // current head
+        new_node.next = head;
+
+        // Return the new node as the new head of the list
+        return new_node;
+    }
+
+    public static void printList(Node head)
+    {
+        Node curr = head;
+        while (curr != null) {
+            System.out.print(" " + curr.data);
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        // Create the linked list 2->3->4->5
+        Node head = new Node(2);
+        head.next = new Node(3);
+        head.next.next = new Node(4);
+        head.next.next.next = new Node(5);
+
+        // Print the original list
+        System.out.println("Original Linked List:");
+        printList(head);
+
+        // Insert a new node at the front of the list
+        System.out.println(
+            "After inserting Nodes at the front:");
+        int data = 1;
+        head = insertAtFront(head, data);
+
+        // Print the updated list
+        printList(head);
+    }
+}
+```
+
+```
+Original Linked List: 2 3 4 5
+After inserting Nodes at the front: 1 2 3 4 5
+```
+
+- **Time Complexity**: O(1), We have a pointer to the head and we can directly attach a node and update the head pointer. So, the Time complexity of inserting a node at the head position is O(1).
+- **Auxiliary Space**: O(1)
