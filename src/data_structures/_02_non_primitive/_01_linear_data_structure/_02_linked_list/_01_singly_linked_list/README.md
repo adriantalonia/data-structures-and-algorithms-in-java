@@ -144,3 +144,97 @@ After inserting Nodes at the front: 1 2 3 4 5
 
 - **Time Complexity**: O(1), We have a pointer to the head and we can directly attach a node and update the head pointer. So, the Time complexity of inserting a node at the head position is O(1).
 - **Auxiliary Space**: O(1)
+
+### Inserting At End of the list
+
+Inserting at the end involves traversing the entire list until we reach the last node. We then set the last node’s next reference to point to the new node, making the new node the last element in the list.
+
+***Algorithm:***
+
+Go to the last node of the Linked List
+Change the next pointer of last node from NULL to the new node
+Make the next pointer of new node as NULL to show the end of Linked List
+
+```java
+// Java Program to Insert a Node at the End of Linked List
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int newData)
+    {
+        data = newData;
+        next = null;
+    }
+}
+
+public class GfG {
+
+    // Function appends a new node at the end and returns
+    // the head.
+    static Node insertAtEnd(Node head, int newData)
+    {
+
+        // Create a new node
+        Node newNode = new Node(newData);
+
+        // If the Linked List is empty, make the new
+        // node as the head and return
+        if (head == null) {
+            return newNode;
+        }
+
+        // Store the head reference in a temporary variable
+        Node last = head;
+
+        // Traverse till the last node
+        while (last.next != null) {
+            last = last.next;
+        }
+
+        // Change the next pointer of the
+        // last node to point to the new node
+        last.next = newNode;
+
+        // Return the head of the list
+        return head;
+    }
+
+    public static void printList(Node node)
+    {
+        while (node != null) {
+            System.out.print(" " + node.data);
+            node = node.next;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // Create a linked list:
+        // 2 -> 3 -> 4 -> 5 -> 6
+        Node head = new Node(2);
+        head.next = new Node(3);
+        head.next.next = new Node(4);
+        head.next.next.next = new Node(5);
+        head.next.next.next.next = new Node(6);
+
+        System.out.print("Created Linked list is:");
+        printList(head);
+
+        // Example of appending a node at the end
+        head = insertAtEnd(head, 1);
+
+        System.out.print("\nAfter inserting 1 at the end:");
+        printList(head);
+    }
+}
+```
+
+```
+Created Linked list is: 2 3 4 5 6 
+After inserting 1 at the end: 2 3 4 5 6 1 
+```
+
+- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
+- **Auxiliary Space**: O(1)
