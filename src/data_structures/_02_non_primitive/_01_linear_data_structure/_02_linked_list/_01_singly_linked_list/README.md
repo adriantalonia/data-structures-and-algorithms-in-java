@@ -8,6 +8,7 @@
   * [Application of Singly Linked Lists:](#application-of-singly-linked-lists)
   * [Operations on Singly Linked List:](#operations-on-singly-linked-list)
     * [Inserting At the Beginning of the list](#inserting-at-the-beginning-of-the-list)
+    * [Inserting At End of the list](#inserting-at-end-of-the-list)
 <!-- TOC -->
 
 ## Singly Linked List definition & meaning DSA
@@ -151,9 +152,9 @@ Inserting at the end involves traversing the entire list until we reach the last
 
 ***Algorithm:***
 
-Go to the last node of the Linked List
-Change the next pointer of last node from NULL to the new node
-Make the next pointer of new node as NULL to show the end of Linked List
+- Go to the last node of the Linked List
+- Change the next pointer of last node from NULL to the new node
+- Make the next pointer of new node as NULL to show the end of Linked List
 
 ```java
 // Java Program to Insert a Node at the End of Linked List
@@ -234,6 +235,102 @@ public class GfG {
 ```
 Created Linked list is: 2 3 4 5 6 
 After inserting 1 at the end: 2 3 4 5 6 1 
+```
+
+- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
+- **Auxiliary Space**: O(1)
+
+### Insert at a specific position in list
+
+To insert a new node at a specific position, we need to traverse the list to position – 1. If the position is valid, we adjust the pointers similarly such that the next pointer of the new node points to the next of current nod and next pointer of current node points to the new node.
+
+**Algorithm:**
+
+- Traverse the Linked list upto position-1 nodes.
+- Once all the position-1 nodes are traversed, allocate memory and the given data to the new node.
+- Point the next pointer of the new node to the next of current node.
+- Point the next pointer of current node to the new node.
+
+```Java
+// Java Program to Insert a Node At a Specific Position in
+// Linked List
+class Node {
+    int data;
+    Node next;
+
+    Node(int data)
+    {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class GFG {
+    // Function to insert a node at a specific position in
+    // the linked list
+    public static Node
+    insertAtPosition(Node head, int position, int data)
+    {
+        Node newNode = new Node(data);
+
+        // If inserting at the beginning
+        if (position == 1) {
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+
+        Node current = head;
+        for (int i = 1; i < position - 1 && current != null;
+             ++i) {
+            current = current.next;
+        }
+
+        // If the position is out of bounds
+        if (current == null) {
+            System.out.println(
+                "Position is out of bounds.");
+            return head;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+        return head;
+    }
+
+    public static void printList(Node head)
+    {
+        while (head != null) {
+            System.out.print(" " + head.data);
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        // Creating the list 3->5->8->10
+        Node head = new Node(3);
+        head.next = new Node(5);
+        head.next.next = new Node(8);
+        head.next.next.next = new Node(10);
+
+        System.out.print("Linked list before insertion:");
+        printList(head);
+
+        // Insert a new node with data 12 at position 3
+        int data = 12, pos = 2;
+        head = insertAtPosition(head, pos, data);
+        System.out.print("Linked list after insertion of 12 at position " + pos + ":");
+        printList(head);
+    }
+}
+```
+
+**Output**
+```
+Linked list before insertion: 3 5 8 10
+Linked list after insertion of 12 at position 3: 3 12 5 8 10
 ```
 
 - **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
