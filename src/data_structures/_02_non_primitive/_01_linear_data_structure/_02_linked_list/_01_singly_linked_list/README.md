@@ -9,6 +9,7 @@
   * [Operations on Singly Linked List:](#operations-on-singly-linked-list)
     * [Inserting At the Beginning of the list](#inserting-at-the-beginning-of-the-list)
     * [Inserting At End of the list](#inserting-at-end-of-the-list)
+    * [Insert at a specific position in list](#insert-at-a-specific-position-in-list)
 <!-- TOC -->
 
 ## Singly Linked List definition & meaning DSA
