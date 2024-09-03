@@ -21,3 +21,27 @@ In a data structure, a doubly linked list is represented using nodes that have t
 3. A pointer to the previous node (prev)
 
 ![img](/src/resources/img/doubly-linked-list-representation.png)
+
+## Node Definition
+
+Here is how a node in a Doubly Linked List is typically represented:
+
+```java
+class Node {
+
+    // To store the Value or data.
+    int data;
+
+    // Reference to the Previous Node
+    Node prev;
+  
+    // Reference to the next Node
+    Node next;
+  
+    // Constructor
+    Node(int d) {
+       data = d;
+       prev = next = null;      
+    }
+};
+```
