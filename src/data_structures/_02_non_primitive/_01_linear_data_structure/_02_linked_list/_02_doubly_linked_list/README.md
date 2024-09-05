@@ -45,3 +45,19 @@ class Node {
     }
 };
 ```
+
+Each node in a Doubly Linked List contains the data it holds, a pointer to the next node in the list, and a pointer to the previous node in the list. By linking these nodes together through the next and prev pointers, we can traverse the list in both directions (forward and backward), which is a key feature of a Doubly Linked List.
+
+## Operations on Doubly Linked List
+
+- Traversal in Doubly Linked List
+- Searching in Doubly Linked List
+- Finding Length of Doubly Linked List
+- Insertion in Doubly Linked List:
+  - Insertion at the beginning of Doubly Linked List
+  - Insertion at the end of the Doubly Linked List
+  - Insertion at a specific position in Doubly Linked List
+- Deletion in Doubly Linked List:
+  - Deletion of a node at the beginning of Doubly Linked List
+  - Deletion of a node at the end of Doubly Linked List
+  - Deletion of a node at a specific position in Doubly Linked List
