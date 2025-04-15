@@ -10,15 +10,20 @@
     * [Inserting At the Beginning of the list](#inserting-at-the-beginning-of-the-list)
     * [Inserting At End of the list](#inserting-at-end-of-the-list)
     * [Insert at a specific position in list](#insert-at-a-specific-position-in-list)
+    * [Deleting from the Beginning of the list](#deleting-from-the-beginning-of-the-list)
 <!-- TOC -->
 
 ## Singly Linked List definition & meaning DSA
 
-> A singly linked list is a special type of linked list in which each node has only one link that points to the next node in the linked list.
+> A singly linked list is a special type of linked list in which each node has only one link that points to the next
+> node in the linked list.
 
-A singly linked list is a data structure consisting of a sequence of elements, each containing data and a reference (or link) to the next element in the sequence. Unlike arrays, linked lists do not require contiguous memory locations, making them efficient for insertions and deletions.
+A singly linked list is a data structure consisting of a sequence of elements, each containing data and a reference (or
+link) to the next element in the sequence. Unlike arrays, linked lists do not require contiguous memory locations,
+making them efficient for insertions and deletions.
 
 ## Structure of a Singly Linked List
+
 A singly linked list is composed of nodes. Each node has two components:
 
 1) Data: The value stored in the node.
@@ -28,8 +33,8 @@ A singly linked list is composed of nodes. Each node has two components:
 
 ```java
 class Node {
-int data;
-Node next;
+    int data;
+    Node next;
 
     Node(int data) {
         this.data = data;
@@ -39,33 +44,45 @@ Node next;
 ```
 
 ## Characteristics of a Singly Linked List:
+
 - Each node holds a single value and a reference to the next node in the list.
-- The list has a head, which is a reference to the first node in the list, and a tail, which is a reference to the last node in the list.
-- The nodes are not stored in a contiguous block of memory, but instead, each node holds the address of the next node in the list.
-- Accessing elements in a singly linked list requires traversing the list from the head to the desired node, as there is no direct access to a specific node in memory.
+- The list has a head, which is a reference to the first node in the list, and a tail, which is a reference to the last
+  node in the list.
+- The nodes are not stored in a contiguous block of memory, but instead, each node holds the address of the next node in
+  the list.
+- Accessing elements in a singly linked list requires traversing the list from the head to the desired node, as there is
+  no direct access to a specific node in memory.
 
 ## Application of Singly Linked Lists:
-- **Memory management:** Singly linked lists can be used to implement memory pools, in which memory is allocated and deallocated as needed.
-- **Database indexing:** Singly linked lists can be used to implement linked lists in databases, allowing for fast insertion and deletion operations.
-- **Representing polynomials and sparse matrices:** Singly linked lists can be used to efficiently represent polynomials and sparse matrices, where most elements are zero.
-- **Operating systems:** Singly linked lists are used in operating systems for tasks such as scheduling processes and managing system resources.
+
+- **Memory management:** Singly linked lists can be used to implement memory pools, in which memory is allocated and
+  deallocated as needed.
+- **Database indexing:** Singly linked lists can be used to implement linked lists in databases, allowing for fast
+  insertion and deletion operations.
+- **Representing polynomials and sparse matrices:** Singly linked lists can be used to efficiently represent polynomials
+  and sparse matrices, where most elements are zero.
+- **Operating systems:** Singly linked lists are used in operating systems for tasks such as scheduling processes and
+  managing system resources.
 
 ## Operations on Singly Linked List:
+
 - Traversal
 - Searching
 - Length
 - Insertion:
-  - Insert at the beginning
-  - Insert at the end
-  - Insert at a specific position
+    - Insert at the beginning
+    - Insert at the end
+    - Insert at a specific position
 - Deletion:
-  - Delete from the beginning
-  - Delete from the end
-  - Delete a specific node
+    - Delete from the beginning
+    - Delete from the end
+    - Delete a specific node
 
 ### Inserting At the Beginning of the list
 
-To insert a new node at the front, we create a new node and point its next reference to the current head of the linked list. Then, we update the head to be this new node. This operation is efficient because it only requires adjusting a few pointers.
+To insert a new node at the front, we create a new node and point its next reference to the current head of the linked
+list. Then, we update the head to be this new node. This operation is efficient because it only requires adjusting a few
+pointers.
 
 **Algorithm**:
 
@@ -81,8 +98,7 @@ class Node {
     int data;
     Node next;
 
-    Node(int new_data)
-    {
+    Node(int new_data) {
         data = new_data;
         next = null;
     }
@@ -92,8 +108,7 @@ public class GFG {
     // Function to insert a new node at the beginning of the
     // list
     public static Node insertAtFront(Node head,
-                                     int new_data)
-    {
+                                     int new_data) {
         // Create a new node with the given data
         Node new_node = new Node(new_data);
 
@@ -105,8 +120,7 @@ public class GFG {
         return new_node;
     }
 
-    public static void printList(Node head)
-    {
+    public static void printList(Node head) {
         Node curr = head;
         while (curr != null) {
             System.out.print(" " + curr.data);
@@ -115,8 +129,7 @@ public class GFG {
         System.out.println();
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Create the linked list 2->3->4->5
         Node head = new Node(2);
         head.next = new Node(3);
@@ -129,7 +142,7 @@ public class GFG {
 
         // Insert a new node at the front of the list
         System.out.println(
-            "After inserting Nodes at the front:");
+                "After inserting Nodes at the front:");
         int data = 1;
         head = insertAtFront(head, data);
 
@@ -144,12 +157,14 @@ Original Linked List: 2 3 4 5
 After inserting Nodes at the front: 1 2 3 4 5
 ```
 
-- **Time Complexity**: O(1), We have a pointer to the head and we can directly attach a node and update the head pointer. So, the Time complexity of inserting a node at the head position is O(1).
+- **Time Complexity**: O(1), We have a pointer to the head and we can directly attach a node and update the head
+  pointer. So, the Time complexity of inserting a node at the head position is O(1).
 - **Auxiliary Space**: O(1)
 
 ### Inserting At End of the list
 
-Inserting at the end involves traversing the entire list until we reach the last node. We then set the last node’s next reference to point to the new node, making the new node the last element in the list.
+Inserting at the end involves traversing the entire list until we reach the last node. We then set the last node’s next
+reference to point to the new node, making the new node the last element in the list.
 
 ***Algorithm:***
 
@@ -164,8 +179,7 @@ class Node {
     int data;
     Node next;
 
-    Node(int newData)
-    {
+    Node(int newData) {
         data = newData;
         next = null;
     }
@@ -175,8 +189,7 @@ public class GfG {
 
     // Function appends a new node at the end and returns
     // the head.
-    static Node insertAtEnd(Node head, int newData)
-    {
+    static Node insertAtEnd(Node head, int newData) {
 
         // Create a new node
         Node newNode = new Node(newData);
@@ -203,16 +216,14 @@ public class GfG {
         return head;
     }
 
-    public static void printList(Node node)
-    {
+    public static void printList(Node node) {
         while (node != null) {
             System.out.print(" " + node.data);
             node = node.next;
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Create a linked list:
         // 2 -> 3 -> 4 -> 5 -> 6
         Node head = new Node(2);
@@ -238,12 +249,15 @@ Created Linked list is: 2 3 4 5 6
 After inserting 1 at the end: 2 3 4 5 6 1 
 ```
 
-- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
+- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end,
+  the function does O(n) work.
 - **Auxiliary Space**: O(1)
 
 ### Insert at a specific position in list
 
-To insert a new node at a specific position, we need to traverse the list to position – 1. If the position is valid, we adjust the pointers similarly such that the next pointer of the new node points to the next of current nod and next pointer of current node points to the new node.
+To insert a new node at a specific position, we need to traverse the list to position – 1. If the position is valid, we
+adjust the pointers similarly such that the next pointer of the new node points to the next of current nod and next
+pointer of current node points to the new node.
 
 **Algorithm:**
 
@@ -259,8 +273,7 @@ class Node {
     int data;
     Node next;
 
-    Node(int data)
-    {
+    Node(int data) {
         this.data = data;
         this.next = null;
     }
@@ -270,8 +283,7 @@ public class GFG {
     // Function to insert a node at a specific position in
     // the linked list
     public static Node
-    insertAtPosition(Node head, int position, int data)
-    {
+    insertAtPosition(Node head, int position, int data) {
         Node newNode = new Node(data);
 
         // If inserting at the beginning
@@ -290,7 +302,7 @@ public class GFG {
         // If the position is out of bounds
         if (current == null) {
             System.out.println(
-                "Position is out of bounds.");
+                    "Position is out of bounds.");
             return head;
         }
 
@@ -299,8 +311,7 @@ public class GFG {
         return head;
     }
 
-    public static void printList(Node head)
-    {
+    public static void printList(Node head) {
         while (head != null) {
             System.out.print(" " + head.data);
             head = head.next;
@@ -308,8 +319,7 @@ public class GFG {
         System.out.println();
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Creating the list 3->5->8->10
         Node head = new Node(3);
         head.next = new Node(5);
@@ -329,10 +339,101 @@ public class GFG {
 ```
 
 **Output**
+
 ```
 Linked list before insertion: 3 5 8 10
 Linked list after insertion of 12 at position 3: 3 12 5 8 10
 ```
 
-- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
+- **Time complexity**: O(N), where N is the number of nodes in the linked list. Since there is a loop from head to end,
+  the function does O(n) work.
+- **Auxiliary Space**: O(1)
+
+### Deleting from the Beginning of the list
+
+Deleting a node in a Linked List is an important operation and can be done in three main ways: removing the first node,
+removing a node in the middle, or removing the last node.
+
+![image](/src/resources/img/Deletion-at-the-Beginning-of-Singly-Linked-List.png)
+
+**Step-by-Step Approach:**
+
+1. **Check if the list is empty**: If the head is NULL, the list is empty, and there’s nothing to delete.
+2. **Update the head pointer**: Set the head to the second node (head = head->next).
+3. **Delete the original head node**: The original head node is now unreferenced, and it can be freed/deleted if
+   necessary (in languages like C++ where memory management is manual).
+
+![image](/src/resources/img/Deletion-at-beginning-.png)
+
+**By Shifting head node to next node of head – O(1) Time and O(1) Space**
+
+To remove the first node of a linked list, store the current head in a temporary variable (temp), move the head pointer
+to the next node, delete the temporary head node and finally , return the new head of the linked list.
+
+```java
+// Java program to delete the head node
+// from a linked list
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class GfG {
+
+    // Delete the head node and return the new head
+    static Node deleteHead(Node head) {
+
+        // Check if the list is empty
+        if (head == null)
+            return null;
+
+        // Store the current head in a temporary variable
+        Node temp = head;
+
+        // Move the head pointer to the next node
+        head = head.next;
+
+        // Help the garbage collector by 
+        // removing the reference
+        temp = null;
+
+        return head;
+    }
+
+    static void printList(Node curr) {
+        while (curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Create a hard-coded linked list:
+        // 3 -> 12 -> 15 -> 18
+        Node head = new Node(3);
+        head.next = new Node(12);
+        head.next.next = new Node(15);
+        head.next.next.next = new Node(18);
+        head = deleteHead(head);
+        printList(head);
+    }
+}
+
+```
+
+**Output:**
+
+```
+Beginning: 3 -> 12 -> 15 -> 18 -> 
+After Deletion: 12 -> 15 -> 18 -> 
+```
+
+- **Time complexity**: O(1), because the operation to delete the head node is performed in constant time.
 - **Auxiliary Space**: O(1)
